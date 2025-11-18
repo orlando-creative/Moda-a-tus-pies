@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moda a tus Pies - Inicio</title>
+    <meta name="description" content="Descripción breve y atractiva de la empresa cliente.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav container">
+        <a href="index.html" class="logo">
+            <!-- Opción 1: Logo como Texto -->
+            <!-- Opción 2: Logo como Imagen -->
+            <img src="img/logo.png" alt="Logo de la Empresa" class="logo-img">
+            Moda a Tus Pies
+        </a>
+        
+        <!-- Checkbox invisible para controlar el menú -->
+        <input type="checkbox" id="nav-toggle-checkbox" class="nav-toggle-checkbox">
+        
+        <!-- Label que simula el botón hamburguesa -->
+        <label for="nav-toggle-checkbox" class="nav-toggle" aria-label="Abrir menú">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <!-- El menú ahora se controlará por el checkbox -->
+        <ul class="nav-menu">
+            <!-- Para index.html -->
+            <li class="nav-menu-item"><a href="index.html" class="nav-menu-link active">Inicio</a></li>
+            <!-- Para catalogo.html, quita 'active' de aquí y ponlo en el siguiente -->
+            <li class="nav-menu-item"><a href="catalogo.html" class="nav-menu-link">Catálogo</a></li>
+            <li class="nav-menu-item"><a href="nosotros.html" class="nav-menu-link">Nosotros</a></li>
+            <li class="nav-menu-item"><a href="contacto.html" class="nav-menu-link">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        <!-- ===============================
+            SECCIÓN HERO (PORTADA)
+        ================================ -->
+        <section class="hero">
+            <div class="hero-content container">
+                <h1>Moda a Tus Pies</h1>
+                <p>Un eslogan o descripción corta que capture la esencia del negocio.</p>
+                <a href="contacto.html" class="btn btn-primary">Contáctanos Ahora</a>
+            </div>
+        </section>
+
+        <!-- ===============================
+            PRODUCTOS DESTACADOS
+        ================================ -->
+        <section class="featured-products container">
+            <h2>Productos Destacados</h2>
+            <p class="section-description">Una selección de nuestros productos o servicios más populares.</p>
+
+            <div class="product-grid">
+                <!-- Producto 1 (Placeholder) -->
+                <div class="card">
+                    <img src="img/p1.jpg" alt="Producto 1" class="card-img" >
+                    <div class="card-body">
+                        <h3 class="card-title">Tennis Sports</h3>
+                        <p class="card-description">TALLA 37.</p>
+                        <div class="card-price">Bs. 70bs.</div>
+                        <a href="contacto.html" class="card-btn">Consultar</a>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 (Placeholder) -->
+                <div class="card">
+                    <img src="img/p3.jpg" alt="Producto 2" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">VANS</h3>
+                        <p class="card-description">TALLA 41 | 26,5CM | NEGRO.</p>
+                        <div class="card-price">Bs. 130</div>
+                        <a href="contacto.html" class="card-btn">Consultar</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="img/p2.jpg" alt="Producto 2" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">NIKE</h3>
+                        <p class="card-description">TALLA 37.</p>
+                        <div class="card-price">Bs. 110</div>
+                        <a href="contacto.html" class="card-btn">Consultar</a>
+                    </div>
+                </div>
+
+            <div class="text-center">
+                <a href="catalogo.html" class="btn btn-secondary">Ver Catálogo Completo</a>
+            </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <span class="empresa-placeholder">[Nombre de la Empresa]</span> | Todos los derechos reservados.</p>
+            <p>Diseñado por <span class="tu-empresa-placeholder">[Nombre de Tu Empresa]</span></p>
+        </div>
+    </footer>
+</body>
+</html>

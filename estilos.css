@@ -1,0 +1,441 @@
+/* ===============================
+   PALETA DE DISEÑO (EDITABLE)
+================================ */
+:root {
+    /* COLORES DE MARCA */
+    --color-principal: #E42F34;
+    --color-principal-hover: #c9282d;
+    --color-secundario: #1A2F69;
+    --color-acento: #F8C847;
+
+    /* NEUTROS Y FONDOS (Ajustados para accesibilidad) */
+    --color-fondo: #FDF9F2;       /* Fondo principal (Blanco suave) */
+    --color-texto: #000000;       /* Texto principal */
+    --color-texto-secundario: #444444; /* Texto secundario (Gris oscuro) */
+    --color-blanco: #ffffff;
+    --color-gris-claro: #F8F8F8;  /* Fondo de secciones o tarjetas */
+    --color-borde: #E0E0E0;       /* Bordes y separadores */
+    
+    /* TIPOGRAFÍA Y EFECTOS */
+    --fuente-principal: 'Arial', sans-serif;
+    --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.08);
+    --sombra-card-hover: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   ESTILOS GLOBALES Y RESET (OPTIMIZADO)
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; 
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--color-secundario); /* Títulos usan el Secundario para un look más corporativo */
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-texto-secundario);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Enlaces */
+a {
+    color: var(--color-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--color-principal-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===============================
+   UTILIDADES Y BOTONES
+================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+.btn-primary:hover {
+    background-color: var(--color-principal-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-secundario); /* Usamos el color secundario como borde */
+    border: 2px solid var(--color-secundario);
+}
+.btn-secondary:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   HEADER Y NAVEGACIÓN
+================================ */
+.header {
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-secundario); /* El logo usa el Secundario de marca */
+    z-index: 1010;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.logo:hover {
+    color: var(--color-secundario);
+}
+.logo-img { height: 40px; width: auto; }
+
+.nav-menu { display: flex; gap: 0.5rem; }
+
+.nav-menu-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-texto-secundario);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu-link:hover {
+    background-color: var(--color-gris-claro);
+    color: var(--color-principal);
+}
+
+.nav-menu-link.active {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+/* Navegación Móvil Setup */
+.nav-toggle-checkbox { display: none; }
+.nav-toggle { display: none; cursor: pointer; z-index: 1010; padding: 0.5rem; }
+.nav-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--color-principal);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+/* ===============================
+   SECCIONES DE CONTENIDO
+================================ */
+
+/* Hero (Portadas) */
+.hero {
+    background-color: var(--color-secundario);
+    padding: 6rem 1.5rem;
+    text-align: center;
+    color: var(--color-blanco);
+}
+.hero h1 {
+    color: var(--color-blanco); /* Título sobre fondo oscuro */
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8); /* Texto sobre fondo oscuro */
+    margin-bottom: 2rem;
+}
+
+/* Page Header (Páginas internas) */
+.page-header {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.page-header h1 {
+    color: var(--color-blanco);
+    margin: 0;
+}
+
+/* Estilos de Sección Generales */
+.featured-products, .catalog-section, .about-section, .social-section, .contact-section {
+    padding: 4rem 0;
+}
+.featured-products h2, .catalog-section h2, .about-section h2, .social-section h2, .contact-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* ===============================
+   GRID DE PRODUCTOS Y CARDS
+================================ */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--sombra-card-hover);
+    transform: translateY(-5px);
+}
+
+.card-img {
+    width: 100%; 
+    height: 200px; 
+    object-fit: contain;
+    background-color: var(--color-gris-claro);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.card-body { padding: 1.5rem; }
+
+.card-title {
+    font-size: 1.25rem; margin-bottom: 0.5rem;
+    color: var(--color-texto); /* Título de card más sutil */
+}
+
+.card-description {
+    font-size: 0.9rem; margin-bottom: 1rem;
+    min-height: 3.2em;
+}
+
+.card-price {
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--color-acento); /* Precio usa el color de acento */
+    margin-bottom: 1rem;
+}
+
+.card-btn {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 0.6rem 1rem; border-radius: 6px;
+    width: 100%; text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: var(--color-principal-hover);
+}
+
+/* ===============================
+   PÁGINA: NOSOTROS Y CONTACTO
+================================ */
+/* Estilos generales de grid de contenido */
+.about-grid, .contact-grid { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 3rem; 
+}
+.about-image img { border-radius: 8px; box-shadow: var(--sombra-card); }
+.mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.card-mv { background-color: var(--color-gris-claro); padding: 2rem; border-radius: 8px; } /* Usa gris claro */
+.card-mv h3 { color: var(--color-secundario); margin-bottom: 1rem; } /* Usa secundario */
+
+/* Redes Sociales */
+.social-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.social-link {
+    display: flex; flex-direction: column; align-items: center; font-weight: 500;
+    color: var(--color-texto-secundario); transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-link:hover { color: var(--color-principal); transform: translateY(-5px); }
+.social-icon { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--color-principal); }
+
+/* Colores de hover de redes específicas (DEBEN ser hardcodeados para identidad) */
+.social-link[aria-label="Facebook"]:hover { color: #1877F2; }
+.social-link[aria-label="Instagram"]:hover { color: #E4405F; }
+.social-link[aria-label="TikTok"]:hover { color: #000000; }
+
+/* Contacto y WhatsApp */
+.info-list li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; font-size: 1rem; }
+.info-list i { font-size: 1.25rem; color: var(--color-principal); flex-shrink: 0; width: 25px; text-align: center; }
+
+.whatsapp-link {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    background-color: #25D366; /* WhatsApp Brand Color */
+    color: var(--color-blanco); padding: 0.75rem 1.5rem; border-radius: 50px; 
+    font-weight: 600; margin: 0.5rem 0.5rem 0.5rem 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.whatsapp-link:hover {
+    background-color: #128C7E;
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+.whatsapp-link .social-icon { font-size: 1.5rem; color: var(--color-blanco); margin: 0; }
+
+.map-container {
+    position: relative; width: 100%; height: 0; padding-bottom: 75%;
+    overflow: hidden; border-radius: 8px; box-shadow: var(--sombra-card);
+}
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+    background-color: var(--color-secundario); /* Footer usa Secundario de marca */
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 4rem;
+}
+.footer p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.25rem 0;
+}
+.footer .tu-empresa-placeholder { font-weight: 600; }
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablets (hasta 992px) */
+@media (max-width: 992px) {
+    .about-grid, .contact-grid, .mission-vision {
+        grid-template-columns: 1fr;
+    }
+    .about-image { order: -1; }
+    .contact-map { padding-bottom: 60%; }
+}
+
+/* Móviles (hasta 768px) */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    
+    .hero { padding: 4rem 1.5rem; }
+    .hero h1 { font-size: 2.25rem; }
+
+    /* Navegación Móvil */
+    .nav { flex-direction: row; justify-content: space-between; align-items: center; height: 4.5rem; padding: 0 1.5rem; }
+    .nav-toggle { display: block; }
+    .nav-menu {
+        display: flex; /* Para posicionamiento absoluto */
+        position: absolute;
+        top: 4.5rem; 
+        right: 0; 
+        left: auto; 
+        width: 80%; 
+        max-width: 300px;
+        background-color: var(--color-blanco);
+        visibility: hidden; opacity: 0;
+        transform-origin: top right;
+        transform: scaleY(0);
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        flex-direction: column; gap: 0; padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-borde); box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    }
+    
+    .nav-menu-link { padding: 1rem 1.5rem; border-radius: 0; border-top: 1px solid var(--color-borde); }
+    .nav-menu-item:first-child .nav-menu-link { border-top: none; }
+
+    /* Checkbox Hack */
+    .nav-toggle-checkbox:checked ~ .nav-menu {
+        visibility: visible; opacity: 1; transform: scaleY(1);
+    }
+    .nav-toggle-checkbox:checked ~ .nav-toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle-checkbox:checked ~ .nav-toggle .bar:nth-child(2) { opacity: 0; }
+    .nav-toggle-checkbox:checked ~ .nav-toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    #tiktok-video-section { padding: 20px 10px; }
+    #tiktok-video-section h2 { font-size: 1.5em; }
+    .container { padding: 0 1rem; }
+    .hero { padding: 3rem 1rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1.1rem; }
+
+    .btn, .whatsapp-link {
+        width: 100%;
+        margin-right: 0;
+        justify-content: center;
+    }
+    .btn { padding: 1rem; }
+}
